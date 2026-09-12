@@ -1,0 +1,3 @@
+cd ../src_ia
+make
+cd ../bin_ia
