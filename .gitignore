@@ -1,2 +1,5 @@
 *.o 
 *.a
+*.for
+*.test
+.set
