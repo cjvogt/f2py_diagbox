@@ -100,7 +100,7 @@ c     global variables
 c ---------------------------------------------------------------------
 c
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/diagboxmod.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/diagboxmod.h" 1
 c===================== include file diagboxmod.h =========================
 c
 c general variables of diagnostic box model
@@ -148,7 +148,7 @@ c
       
 # 98 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/simulation.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/simulation.h" 1
 c======================= include file simulation.h ==========================
 c
 c variables for controlling the simulation
@@ -183,7 +183,7 @@ c
 
 # 99 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/gasex_params.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/gasex_params.h" 1
 c===================== include file gasex_params.h =========================
 c
 c parameters of air-sea exchange
@@ -236,7 +236,7 @@ c
       logical comp_fco2_online
 # 100 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/diffent_params.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/diffent_params.h" 1
 c===================== include file diffent_params.h =========================
 c
 c parameter of vertical diffusion and entrainment
@@ -323,7 +323,7 @@ c
       
 # 101 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/adv_params.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/adv_params.h" 1
 c===================== include file adv_params.h =========================
 c
 c parameters of horizontal advection
@@ -358,7 +358,7 @@ c
       double precision sg_u
 # 102 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/ncp_params.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/ncp_params.h" 1
 c===================== include file ncp_params.h =========================
 c
 c parameters of net community production
@@ -387,7 +387,7 @@ c
       double precision dc13_org
 # 103 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/periods.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/periods.h" 1
 c======================= include file periods.h ==============================
 c
 c variables for the periods that are investigated 
@@ -424,7 +424,7 @@ c
 
 # 104 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/processes.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/processes.h" 1
 c======================= include file processes.h ============================
 c
 c variables for the processes that are investigated 
@@ -464,7 +464,7 @@ c
 
 # 105 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/slabs.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/slabs.h" 1
 c======================== include file slabs.h  =============================
 c
 c main variables for the seasonal carbon model:
@@ -517,7 +517,7 @@ c
 
 # 106 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/anomalies.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/anomalies.h" 1
 c======================= include file averages.h ==============================
 c
 c variables that store anomalies
@@ -550,7 +550,7 @@ c
       double precision fluxes_a_runavg(nproc_fluxes,nstepmax)
 # 107 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/runavg.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/runavg.h" 1
 c======================= include file runavg.h ==============================
 c
 c variables that store running averages
@@ -576,7 +576,7 @@ c
 # 108 "diag_boxmodel_ia.F" 2
 
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/intval.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/intval.h" 1
 c
 c======================= include file intval.h ==============================
 c
@@ -611,7 +611,7 @@ c
 
 # 110 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/obs_values.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/obs_values.h" 1
 c==================== include file obs_values.h  =============================
 c
 c observed seasonal cycles of input data 
@@ -654,7 +654,7 @@ c
 
 # 111 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/statistics.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/statistics.h" 1
 c==================== include file statistics.h ==============================
 c
 c variables for the run statistics
@@ -698,7 +698,7 @@ c
 
 # 112 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/averages.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/averages.h" 1
 c======================= include file averages.h ==============================
 c
 c variables for calculating annual averages
@@ -739,7 +739,7 @@ c
 # 113 "diag_boxmodel_ia.F" 2
 c
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/conj_grad.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/conj_grad.h" 1
 c===================== include file conj_grad.h =========================
 c
 c variables for finding minimum using conjugate gradient technique
@@ -782,7 +782,7 @@ c
 
 
       parameter(nparams = 10)
-# 53 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/conj_grad.h"
+# 53 "/home/prafter/f2py-diagbox/src_ia/incl/conj_grad.h"
       double precision p(nparams),p_opt(nparams),p_init(nparams)
       double precision sg_p(nparams)
       double precision hessian(nparams,nparams),covm(nparams,nparams)
@@ -790,7 +790,7 @@ c
       
 # 115 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/conj_grad_common.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/conj_grad_common.h" 1
 c================ include file conj_grad_common.h =========================
 c
 c special include block for subroutine func.F. You find here all
@@ -835,7 +835,7 @@ c
       
 # 116 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/op_statistics.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/op_statistics.h" 1
 c==================== include file op_statistics.h ==========================
 c
 c variables for the optimization run statistics
@@ -871,7 +871,7 @@ c
 # 117 "diag_boxmodel_ia.F" 2
 c
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/monte_carlo.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/monte_carlo.h" 1
 c===================== include file monte_carlo.h =========================
 c
 c general variables for monte carlo simulations
@@ -909,7 +909,7 @@ c
 c
 # 119 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/mc_statistics.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/mc_statistics.h" 1
 c================== include file mc_statistics.h =========================
 c
 c variables of statistics of monte carlo runs
@@ -975,7 +975,7 @@ c
 
 # 120 "diag_boxmodel_ia.F" 2
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/mc_plot_slabs.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/mc_plot_slabs.h" 1
 c================== include file mc_plot_slabs.h =========================
 c
 c variables that contain plot information for monte carlo runs
@@ -1079,7 +1079,7 @@ c
 # 121 "diag_boxmodel_ia.F" 2
 c
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/sensitivity.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/sensitivity.h" 1
 c================== include file sensitivity.h =========================
 c
 c variables for sensitivity analysis
@@ -1108,7 +1108,7 @@ c
 # 123 "diag_boxmodel_ia.F" 2
 c
 
-# 1 "/home/prafter/Gruber-Diagnostic-Box-Model/src_ia/incl/inverse_calc.h" 1
+# 1 "/home/prafter/f2py-diagbox/src_ia/incl/inverse_calc.h" 1
 c================== include file inverse_calc.h =========================
 c
 c variables for sensitivity analysis

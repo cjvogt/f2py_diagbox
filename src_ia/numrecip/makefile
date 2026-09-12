@@ -13,7 +13,7 @@
 # ----------------------------------------------------------------------
 #
 
-ROOT = /home/prafter/Gruber-Diagnostic-Box-Model/src_ia
+ROOT = /home/prafter/f2py-diagbox/src_ia
 #
 # ----------------------------------------------------------------------
 # -- Colon separated list of directories which includes include files
