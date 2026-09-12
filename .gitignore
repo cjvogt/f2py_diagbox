@@ -3,3 +3,5 @@
 *.for
 *.test
 .set
+
+.DS_Store
