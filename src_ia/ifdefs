@@ -1,0 +1,4 @@
+#D_FLAGS  = -DBERM -Dwith_horiz_grad -Ddebugging
+#D_FLAGS  = -DBATS_89_93 -Dwith_horiz_grad -Dconst_splines
+#D_FLAGS = -Dwith_horiz_grad -Ddebugging
+D_FLAGS = -Dwith_horiz_grad 

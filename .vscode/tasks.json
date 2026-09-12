@@ -1,0 +1,17 @@
+{
+    "_comment": "JSON should ignore this. may have to change main.exe in args to something specific to diagbox",
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-runtime",
+            "type": "shell",
+            "command": "NCARG_ROOT=/home/prafter/.conda/envs/ncl_stable PATH=/home/prafter/.conda/envs/ncl_stable/bin:$PATH make",
+            "options": { "cwd": "${workspaceFolder}/src_ia" },
+            "group": {
+                "kind":"build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+mc                                    ! name of experiment
+monte carlo iavar 83-01 run                        ! notes
+mc                                   ! simulation mode
+adv                                  ! solution scheme
+10                                  ! number of runs
+i                                    ! interactive parameter specification
+1983.0                                    ! start time
+2001.0                                   ! end time
+0.0025                                    ! time step
+wa                                   ! Wanninkhof
+0                                    ! fco2_corr
+1.d0                                 ! gas-exchange multiplication factor
+n                                    ! o(n)/o(f)fline calc
+ma                                   ! matear scheme
+y                                    ! constant entrainment length
+12.d0                                 ! entrainment length
+1.d0                                 ! entrainment multiplication factor
+n                                    ! seasonally constant kz
+n                                    ! seasonally constant dcdz
+0.d0                                 ! correction to dcdz
+-0.0052                              ! ratio of ddc13/dz to dc/dz
+1.d0                                 ! multiplication factor for diffusion
+1.1d-5                               ! horizontal C gradient
+-0.5d-6                              ! horizontal dC13 gradient
+0.0                                    ! no change of dC13 of organic matter
+y                                    ! plotting
+

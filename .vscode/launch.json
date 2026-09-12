@@ -1,0 +1,27 @@
+{
+    "_comment": "change program path to diagbox",
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Fortran",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin_ia/diag_boxmodel_ia.x",
+            "args":[],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/bin_ia",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "build-runtime",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
