@@ -2,6 +2,6 @@
 *.a
 *.for
 *.test
-.set
+*.set
 
 .DS_Store
