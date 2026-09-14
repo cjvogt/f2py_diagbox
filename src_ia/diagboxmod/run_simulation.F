@@ -158,6 +158,77 @@ c
 # include "c13_params.h"
 # include "statistics.h"
 c
+cf2py intent(in) sol_scheme     
+cf2py intent(in) tstart  
+cf2py intent(in) tend           
+cf2py intent(in) ts             
+cf2py intent(in) nstep          
+cf2py intent(in) dc13_coeff      
+cf2py intent(in) pv_relship
+cf2py intent(in) D_fco2_corr     
+cf2py intent(in) gasex_fact      
+cf2py intent(in) ws_coeff        
+cf2py intent(in) comp_foc2_online
+cf2py intent(in) ent_scheme     
+cf2py intent(in) h_coeff        
+cf2py intent(in) h_th           
+cf2py intent(in) c_th            
+cf2py intent(in) dC13_th         
+cf2py intent(in) dt_ent_re       
+cf2py intent(in) const_lent      
+cf2py intent(in) lent_const      
+cf2py intent(in) dlent_dh      
+cf2py intent(in) ent_fact    
+cf2py intent(in) const_Kz
+cf2py intent(in) Kz_const       
+cf2py intent(in) const_vertgrad 
+cf2py intent(in) dCdz_const      
+cf2py intent(in) D_dcdz         
+cf2py intent(in) ddC13_dC_bml    
+cf2py intent(in) diff_fact     
+cf2py intent(in) incl_adv     
+cf2py intent(in) dC_dh         
+cf2py intent(in) ddC13_dh        
+cf2py intent(in) u            
+cf2py intent(in) D_dc13_org      
+
+
+cf2py intent(out) D_c             
+cf2py intent(out) fluxes       
+cf2py intent(out) D_c13        
+cf2py intent(out) u_var           
+cf2py intent(out) c_obs          
+cf2py intent(out) dc13_obs        
+cf2py intent(out) h_obs          
+cf2py intent(out) temp_obs       
+cf2py intent(out) sal_obs        
+cf2py intent(out) salk_obs       
+cf2py intent(out) fco2_o_obs     
+cf2py intent(out) pco2_a_obs      
+cf2py intent(out) pco2_a_dry     
+cf2py intent(out) fco2_a_obs     
+cf2py intent(out) dc13_a_obs    
+cf2py intent(out) ws_obs          
+cf2py intent(out) dcdz_obs      
+cf2py intent(out) kz_obs         
+cf2py intent(out) c_sim        
+cf2py intent(out) int_rates      
+cf2py intent(out) int_fluxes     
+cf2py intent(out) nyears          
+cf2py intent(out) chisq          
+cf2py intent(out) rsq             
+cf2py intent(out) closure         
+cf2py intent(out) amplitude    
+cf2py intent(out) amplitude_obs  
+cf2py intent(out) c_min         
+cf2py intent(out) c_max         
+cf2py intent(out) c_min_obs       
+cf2py intent(out) c_max_obs       
+cf2py intent(out) costfn 
+cf2py intent(out) avg_fract      
+cf2py intent(out) dc13_prc     
+cf2py intent(out) avg_kex  
+
       logical error
 c
 c ---------------------------------------------------------------------
