@@ -144,7 +144,7 @@ $(X_FILES): $(O_FILES)
 clean:
 	@echo ""
 	@echo " *** CLEANING UP... ***"            
-	-rm -f $(O_FILES) $(X_FILES) $(I_FILES)
+	-rm -f $(O_FILES) $(X_FILES) $(I_FILES) *.so
 	@echo " *** DONE ***"
 
 clean_all:
@@ -209,3 +209,6 @@ clean_debug:
 #
 diag_boxmodel_ia.for : diag_boxmodel_ia.F $(H_FILES)  ${I_PATH}/init_params.h
 diag_boxmodel_ia.o : diag_boxmodel_ia.for
+
+diagbox: run_simulation.f
+	python3 -m numpy.f2py -m diagbox -c run_simulation.f
