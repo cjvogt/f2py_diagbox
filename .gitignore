@@ -3,5 +3,6 @@
 *.for
 *.test
 *.set
+*.json
 
 .DS_Store
