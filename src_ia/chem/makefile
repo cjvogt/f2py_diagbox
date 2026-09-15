@@ -55,6 +55,7 @@ F_FLAGS  = -C -g  -fbacktrace -O0 -finit-real=snan -finit-integer=-2147483648 -f
 LFLAGS = -s
 
 LIBNAME = libchem.a
+
 L = $(LIBNAME)
 
 # -------------------------------------------------------------------------

@@ -209,6 +209,3 @@ clean_debug:
 #
 diag_boxmodel_ia.for : diag_boxmodel_ia.F $(H_FILES)  ${I_PATH}/init_params.h
 diag_boxmodel_ia.o : diag_boxmodel_ia.for
-
-diagbox: run_simulation.f
-	python3 -m numpy.f2py -m diagbox -c run_simulation.f
