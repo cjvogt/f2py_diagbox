@@ -1,6 +1,9 @@
 def main():
     import numpy as np
     import diagbox
+    import os, sys
+    print(os.getcwd())
+    print(sys.path)
 
     incl_adv = False
     plot_out = False
@@ -140,6 +143,16 @@ def main():
     const_vertgrad = False
 
     plot_out = False
+
+    nstep = int((tend-tstart)/ts)
+
+    #dc13_coeff, h_coeff = 1
+    #error = True
+    default_sim = diagbox.run_simulation(sol_scheme, tstart, tend, ts, nstep, 1, pv_relship, 
+                                         D_fco2_corr, gasex_fact, ws_coeff, compl_foc2_online,
+                                         ent_scheme, 1, h_th, c_th, dc13_th, dt_ent_re, const_lent, lent_const,
+                                         dlent_dh, ent_fact, const_Kz, kz_const, const_vertgrad, dCdz_const,
+                                          D_dcdz, ddC13_dC_bml, diff_fact, incl_adv, dC_dh, ddC13_dh, u, D_dc13_org, True )
 
 
 # import os, sys
