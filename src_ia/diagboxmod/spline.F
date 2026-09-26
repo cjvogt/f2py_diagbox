@@ -107,15 +107,15 @@ c
 c     new spline fits, updated May 3, 2002
 c
       data sdic_spline_file 
-     $     /'splines/spline_data.salk_berm_bats_extended'/
+     $     /'splines/spline_data.sdic_berm_bats_020501'/
       data salk_spline_file 
-     $     /'splines/spline_data.sdic_berm_bats_extended'/
+     $     /'splines/spline_data.salk_berm_bats_020501'/
       data dc13_spline_file 
-     $     /'splines/spline_data.dc13_berm_bats_extended'/
+     $     /'splines/spline_data.dc13_berm_bats_020501'/
       data temp_spline_file 
-     $     /'splines/spline_data.temp_berm_bats_extended'/
+     $     /'splines/spline_data.temp_berm_bats_020501'/
       data sal_spline_file  
-     $     /'splines/spline_data.sal_berm_bats_extended'/
+     $     /'splines/spline_data.sal_berm_bats_020501'/
       data fco2o_spline_file 
      $     /'splines/spline_data.pco2_berm_bats_020501'/
       data dc13a_spline_file /'splines/spline_atmdc13_ljo_bme.out'/
@@ -132,7 +132,28 @@ c
 
       data kz_spline_file /'splines/kz_spl_stas_83-99.dat'/
 #endif      
-      
+! COMMENTED OUT FOR DEBUG 9/23
+!       data sdic_spline_file 
+!      $     /'splines/spline_data.salk_berm_bats_extended'/
+!       data salk_spline_file 
+!      $     /'splines/spline_data.sdic_berm_bats_extended'/
+!       data dc13_spline_file 
+!      $     /'splines/spline_data.dc13_berm_bats_extended'/
+!       data temp_spline_file 
+!      $     /'splines/spline_data.temp_berm_bats_extended'/
+!       data sal_spline_file  
+!      $     /'splines/spline_data.sal_berm_bats_extended'/
+!       data fco2o_spline_file 
+!      $     /'splines/spline_data.pco2_berm_bats_020501'/
+!       data dc13a_spline_file /'splines/spline_atmdc13_ljo_bme.out'/
+!       data pco2a_spline_file /'splines/spline_atmco2_ljo_bme.out'/
+!       data dcdz_spline_file 
+!      $     /'splines/ddicdz_bats_1-156_res_spline.out'/
+!       data h_spline_file 
+!      $     /'splines/mld_ts_stas_bats_1-156_res_spline.out'/
+! c
+c     not updated on May 3, 2002
+
       integer ndic,nalk,ndc13,nws,nh,ntemp,nsal
       integer ndc13a,npco2a,nkz,ndcdz,i,nfco2o
 c
@@ -229,7 +250,7 @@ c
             goto 9900
          endif
 c
-8000     format('--SPLINE: file ',a30,' does not exist.'/
+8000     format('--SPLINE: file ',a50,' does not exist.'/
      $             ' program stops.')
 c     
 c --------------------------------------------------------------------
