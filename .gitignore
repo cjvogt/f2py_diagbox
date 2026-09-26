@@ -4,5 +4,8 @@
 *.test
 *.set
 *.json
+*.30
+*.x
+*.cpython-312-x86_64-linux-gnu.so
 
 .DS_Store
