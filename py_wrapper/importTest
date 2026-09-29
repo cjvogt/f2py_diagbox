@@ -147,17 +147,21 @@ def main():
     nstep = int((tend-tstart)/ts)
 
     #dc13_coeff, h_coeff = 1
-    #error = True
+    #error = False
     default_sim = diagbox.run_simulation(sol_scheme, tstart, tend, ts, nstep, 1, pv_relship, 
                                          D_fco2_corr, gasex_fact, ws_coeff, compl_foc2_online,
                                          ent_scheme, 1, h_th, c_th, dc13_th, dt_ent_re, const_lent, lent_const,
                                          dlent_dh, ent_fact, const_Kz, kz_const, const_vertgrad, dCdz_const,
-                                          D_dcdz, ddC13_dC_bml, diff_fact, incl_adv, dC_dh, ddC13_dh, u, D_dc13_org, False )
+                                          D_dcdz, ddC13_dC_bml, diff_fact, incl_adv, dC_dh, ddC13_dh, u, D_dc13_org, 1)
+    
+    print(diagbox.run_simulation.__doc__)
+    print(default_sim)    
+    # for each in default_sim:
+    #     print(each)
 
-
-# import os, sys
-# print(os.getcwd())
-# print(sys.path)
+    import os
+    print(os.getcwd())
+    print(os.path.isfile("splines/spline_data.sdic_berm_bats_020501"))   # must be True
 
 if __name__ == "__main__":
     main()
