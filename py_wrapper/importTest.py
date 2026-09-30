@@ -1,6 +1,7 @@
 def main():
     import numpy as np
     import diagbox
+    import diagbox_plots as diag_plot
     import os, sys
     import numpy as np
     import matplotlib.pyplot as plt
@@ -172,41 +173,43 @@ def main():
     amplitude_obs, c_min, c_max, c_min_obs, c_max_obs, costfn, avg_fract,
     dc13_prc, avg_kex) = out
 
-    # valid length: last nonzero entry of c_sim
-    n = np.flatnonzero(c_sim)[-1] + 1
-    print("valid points:", n, " nstep:", nstep, " stride ~", nstep / n)
+    diag_plot.plot_run_simulation(out, tstart, tend, ts, nstep)
 
-    t = tstart + (tend - tstart) * np.arange(n) / n       # verify against the Fortran output stride
-    clean = lambda a: np.where(np.isclose(a, -99.99, atol=0.01), np.nan, a)
+    # # valid length: last nonzero entry of c_sim
+    # n = np.flatnonzero(c_sim)[-1] + 1
+    # print("valid points:", n, " nstep:", nstep, " stride ~", nstep / n)
 
-    # sanity: where does the simulated DIC spike?
-    i = np.argmax(c_sim[:n])
-    print(f"c_sim max {c_sim[i]:.1f} at t={t[i]:.3f};  c_obs max {c_obs[:n].max():.1f}")
+    # t = tstart + (tend - tstart) * np.arange(n) / n       # verify against the Fortran output stride
+    # clean = lambda a: np.where(np.isclose(a, -99.99, atol=0.01), np.nan, a)
 
-    fig, ax = plt.subplots(4, 1, figsize=(10, 12), sharex=True)
+    # # sanity: where does the simulated DIC spike?
+    # i = np.argmax(c_sim[:n])
+    # print(f"c_sim max {c_sim[i]:.1f} at t={t[i]:.3f};  c_obs max {c_obs[:n].max():.1f}")
 
-    ax[0].plot(t, c_obs[:n], label="obs")
-    ax[0].plot(t, c_sim[:n], label="sim", lw=0.8)
-    ax[0].set_ylabel("DIC"); ax[0].legend()
+    # fig, ax = plt.subplots(4, 1, figsize=(10, 12), sharex=True)
 
-    ax[1].plot(t, c_sim[:n] - c_obs[:n]); ax[1].axhline(0, c="k", lw=0.5)
-    ax[1].set_ylabel("sim - obs")
+    # ax[0].plot(t, c_obs[:n], label="obs")
+    # ax[0].plot(t, c_sim[:n], label="sim", lw=0.8)
+    # ax[0].set_ylabel("DIC"); ax[0].legend()
 
-    ax[2].plot(t, temp_obs[:n], label="T"); ax[2].set_ylabel("temp (°C)")
-    ax2 = ax[2].twinx(); ax2.plot(t, h_obs[:n], c="C1", label="MLD"); ax2.set_ylabel("MLD (m)")
+    # ax[1].plot(t, c_sim[:n] - c_obs[:n]); ax[1].axhline(0, c="k", lw=0.5)
+    # ax[1].set_ylabel("sim - obs")
 
-    for k in range(7):
-        ax[3].plot(t, d_c[k, :n], lw=0.6, label=f"term {k}")
-    ax[3].set_ylabel("d_c terms"); ax[3].set_xlabel("year"); ax[3].legend(ncol=7, fontsize=7)
+    # ax[2].plot(t, temp_obs[:n], label="T"); ax[2].set_ylabel("temp (°C)")
+    # ax2 = ax[2].twinx(); ax2.plot(t, h_obs[:n], c="C1", label="MLD"); ax2.set_ylabel("MLD (m)")
 
-    plt.tight_layout(); plt.show()
+    # for k in range(7):
+    #     ax[3].plot(t, d_c[k, :n], lw=0.6, label=f"term {k}")
+    # ax[3].set_ylabel("d_c terms"); ax[3].set_xlabel("year"); ax[3].legend(ncol=7, fontsize=7)
 
-    # annual budget
-    yrs = tstart + np.arange(nyears)
-    plt.figure(figsize=(9, 4))
-    for k in range(7):
-        plt.plot(yrs, int_rates[:nyears, k], marker="o", label=f"term {k}")
-    plt.legend(ncol=4, fontsize=8); plt.xlabel("year"); plt.ylabel("annual integrated rate"); plt.show()
+    # plt.tight_layout(); plt.show()
+
+    # # annual budget
+    # yrs = tstart + np.arange(nyears)
+    # plt.figure(figsize=(9, 4))
+    # for k in range(7):
+    #     plt.plot(yrs, int_rates[:nyears, k], marker="o", label=f"term {k}")
+    # plt.legend(ncol=4, fontsize=8); plt.xlabel("year"); plt.ylabel("annual integrated rate"); plt.show()
 
 if __name__ == "__main__":
     main()
