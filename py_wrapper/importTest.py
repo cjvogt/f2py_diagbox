@@ -105,7 +105,7 @@ def main():
     #SKIPPED MONTE CARLO FOR NOW
 
     #Specify piston-velocity. Options: lm, ma
-    pv_relship = "lm"
+    #pv_relship = "lm"
 
     if pv_relship == "lm":
         gasex_fact = 1.7447
@@ -116,10 +116,10 @@ def main():
     D_fco2_corr = 0 #DEFAULT
 
     #Specific how fCO2(oc) should be calculated. Options: True or False
-    compl_foc2_online = True
+    compl_foc2_online = False
 
     #Specify entrainment scheme: Options: in, mc, ep, ma
-    ent_scheme = "in"
+    #ent_scheme = "in"
 
     dt_ent_re = 0.0         #0.d0
 
@@ -127,16 +127,16 @@ def main():
     const_lent = True
 
     #Entrainment length scale
-    lent_const = 1 #1 meter
+    lent_const = 12 #1 meter
 
     #Entrainment length to mixed-layer depth
-    dlent_dh = 0.1
+    dlent_dh = 0.11
 
     #Entrainment multiplication
     ent_fact = 1
 
     #Specify if you want to use seasonally constant Kz or varying. Options True or False
-    const_Kz = True
+    const_Kz = False
 
     kz_const = 2e-5         #2.d-5 m2 s-1
 
@@ -147,11 +147,13 @@ def main():
 
     nstep = int((tend-tstart)/ts)
 
-    #dc13_coeff, h_coeff = 1
+    #Assumptions from grepping
+    dc13_coeff = "\x00\x00"   # 2 chars, matches '\000\000'
+    h_coeff    = "\x00"       # 1 char,  matches '\000'
     #error = False
-    default_sim = diagbox.run_simulation(sol_scheme, tstart, tend, ts, nstep, 1, pv_relship, 
+    default_sim = diagbox.run_simulation(sol_scheme, tstart, tend, ts, nstep, dc13_coeff, pv_relship, 
                                          D_fco2_corr, gasex_fact, ws_coeff, compl_foc2_online,
-                                         ent_scheme, 1, h_th, c_th, dc13_th, dt_ent_re, const_lent, lent_const,
+                                         ent_scheme, h_coeff, h_th, c_th, dc13_th, dt_ent_re, const_lent, lent_const,
                                          dlent_dh, ent_fact, const_Kz, kz_const, const_vertgrad, dCdz_const,
                                           D_dcdz, ddC13_dC_bml, diff_fact, incl_adv, dC_dh, ddC13_dh, u, D_dc13_org, 0)
 
