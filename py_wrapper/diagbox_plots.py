@@ -429,6 +429,8 @@ def generate_plots(tstart, tend, ts, nstep, D_C, fluxes, c_sim, c_obs, u_var,
     """
     D_C = np.asarray(D_C, float)
     fluxes = np.asarray(fluxes, float)
+    proc_fluxes_name = ["ex", "diff","ent","adv","ncp"]
+    proc_rates_name = ["ex", "diff","ent","adv","ncp", "sim","obs"]
     rn = list(proc_rates_name) if proc_rates_name is not None else _default_names("rate", 7)
     fn = list(proc_fluxes_name) if proc_fluxes_name is not None else _default_names("flux", 5)
 
