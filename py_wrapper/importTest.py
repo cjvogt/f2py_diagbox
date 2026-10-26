@@ -100,7 +100,7 @@ def main():
     sim_mode = "st"
 
     #Specify solution scheme. Options: std, adv, phy, kz
-    sol_scheme = "adv"
+    sol_scheme = "std"
 
     #SKIPPED MONTE CARLO FOR NOW
 
