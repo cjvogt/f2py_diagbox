@@ -10,6 +10,11 @@ def getObs():
 
     plt.figure(figsize=(8, 6))
     plt.scatter(year, mld)
+    plt.gca().invert_yaxis()
+
+    plt.title('Observational MLD over Timeseries from Standard Run', fontsize=14, fontweight='bold')
+    plt.xlabel('Year', fontsize=12)
+    plt.ylabel('MLD (m)', fontsize=12)
     plt.show()
 
 if __name__ == "__main__":
