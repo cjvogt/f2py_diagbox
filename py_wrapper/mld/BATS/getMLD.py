@@ -12,6 +12,7 @@ Usage:
 Requires: pip install pandas numpy gsw matplotlib
 """
 import argparse
+import os
 import sys
 import numpy as np
 import pandas as pd
@@ -63,7 +64,7 @@ def datetime_to_decimal_year(t):
     return (year + (t - start) / (end - start)).to_numpy()
  
  
-def mld_from_cast(depth, temp, sal, threshold=0.03, ref_depth=15.0):
+def mld_from_cast(depth, temp, sal, threshold=0.03, ref_depth=10.0):
     """MLD = first depth where sigma0 exceeds its value at ref_depth by threshold (kg/m3)."""
     ok = ~(np.isnan(depth) | np.isnan(temp) | np.isnan(sal))
     depth, temp, sal = depth[ok], temp[ok], sal[ok]
@@ -120,9 +121,12 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(description="MLD vs time from CTD data")
     p.add_argument("csv")
     p.add_argument("--threshold", type=float, default=0.03, help="kg/m3 (default 0.03)")
-    p.add_argument("--out", default="mld_by_time.csv")
+    p.add_argument("--out", default=None, help="default: <input name>_mld_by_time.csv")
     p.add_argument("--plot", action="store_true")
     args = p.parse_args()
+ 
+    if args.out is None:
+        args.out = os.path.splitext(args.csv)[0] + "_mld_by_time.csv"
  
     result = compute_mld_table(pd.read_csv(args.csv, low_memory=False), args.threshold)
     result.to_csv(args.out, index=False)
@@ -140,4 +144,3 @@ if __name__ == "__main__":
         plt.xlabel("Time")
         plt.tight_layout()
         plt.show()
- 
