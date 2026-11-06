@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-csv_to_adsn.py  --  BATS CTD profile CSV  ->  ADS file for timeseries_data
+ctd_csv_to_adsn.py  --  BATS CTD profile CSV  ->  ADS file for timeseries_data
                     (default 12-tracer layout: build WITHOUT -Ddericarbquant)
  
-usage:  csv_to_adsn.py input.csv [output.ads2] [options]
+usage:  ctd_csv_to_adsn.py input.csv [output.ads2] [options]
  
 If the output name is omitted it is the input name with extension .ads2
 (bats_ctd.csv -> bats_ctd.ads2).
