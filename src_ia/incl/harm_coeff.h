@@ -17,6 +17,7 @@ c 06.06.00 ng        added new coefficients based on combined BERM/BATS
 c                      data set
 c 24.08.01 ng        added new coefficients for 1983-2001
 c 03.05.02 ng        added new coefficients for 1983 to 2002
+c 16.11.26           added extended-data branch (to 2024)
 c
 c variables:
 c
@@ -138,6 +139,54 @@ c
       data c_dCdz    /0.50410d+0, ! same as BATS
      $               -0.1578d+0, 0.1728d+0, 0.0d+0,0.0d+0,
      $                0.0d+0,0.0d+0/
+#elif defined(BERM_BATS_EXT)
+c
+c --------------------------------------------------------------------
+c     Station 'S' and BATS combined coefficients, extended to 2024
+c       added Nov 16, 2026 (harmfit_results.*Test)
+c       order: mean, sin(2pi t), cos(2pi t), sin(4pi t), cos(4pi t),
+c              sin(6pi t), cos(6pi t);  t in decimal years
+c --------------------------------------------------------------------
+
+      data c_temp    /0.23331d+2,          ! TempTest
+     $               -0.35384d+1,-0.20995d+1, 0.49724d+0, 0.35228d+0,
+     $               -0.45559d-1,-0.18956d+0/
+c
+      data c_sal     /0.36574d+2,          ! SalTest
+     $                0.83636d-1, 0.31653d-1, 0.76584d-2, 0.28520d-1,
+     $               -0.30672d-1, 0.23477d-1/
+c
+      data c_sdic    /0.20508d+4,          ! sdicTest
+     $                0.10553d+2, 0.18139d+0, 0.37197d+1,-0.24868d+1,
+     $                0.39874d+1,-0.17101d+1/
+c
+      data c_dc13    /0.13422d+1,          ! dc13Test
+     $               -0.66926d-1,-0.61286d-2, 0.25056d-2,-0.17184d-1,
+     $                0.11488d-1,-0.61607d-2/
+c
+      data c_salk    /0.23914d+4,          ! salkTest
+     $               -0.96921d+0,-0.28171d-1,-0.28748d+0, 0.23698d+0,
+     $                0.97775d+0,-0.74311d+0/
+c
+      data c_fco2_o  /0.37826d+3,          ! fco2Test
+     $               -0.40798d+2,-0.26887d+2, 0.79726d+1, 0.20672d+1,
+     $               -0.13973d+1,-0.68865d-2/
+c
+      data c_pco2a  / 0.35645d+3,  ! May 03, 2002 (spline is BOGUS)
+     $                 0.4073d+1, 0.1252d+1, -0.1315d+1, 0.4781d+0,
+     $                -0.2101d-1,-0.3498d+0/
+c
+      data c_dc13a  /-0.78625d+1, ! May 03, 2002 (spline is BOGUS)
+     $                -0.2239d+0, -0.9744d-1, 0.6619d-1,-0.1664d-1,
+     $                 0.6341d-2,  0.1724d-1/
+c
+      data c_kz_var  / 0.3624d-4 , ! same as BATS, not updated
+     $                 0.4306d-4 , 0.8956d-5 ,0.5444d-5, -0.1909d-4,
+     $                -0.7567d-5,  0.8822d-6/
+
+      data c_dCdz    /0.6661d+0, ! same as May 2002, not updated
+     $               -0.1969d+0, 0.2734d+0, 0.2231d-1, 0.4882d-1,
+     $               -0.6619d-2,-0.2185d-1/
 #else
 c     
 c --------------------------------------------------------------------
@@ -200,6 +249,12 @@ c
       data c_ws   /   7.173d+0 , 
      $                0.764d+0, 1.894d+0, 0.057d+0, -0.279d+0,
      $                0.0d+0,0.0d+0/
+#elif defined(BERM_BATS_EXT)
+c NCEP monthly coefficients 1959 - 2000 (unchanged; spline is BOGUS)
+c
+       data c_ws   /  0.7531d+1,
+     $                0.6781d+0, 0.1967d+1, 0.1809d+0, 0.1424d+0,
+     $               -0.1997d+0,-0.1780d+0/
 #else
 c NCEP coefficients data from 1983-1996
 c
@@ -219,6 +274,13 @@ c
       data c_h     / 0.74815d+2,
      $               0.4368d+2, 0.5597d+2, 0.2176d+2,-0.9656d+1,
      $              -0.3274d+0,-0.7658d+1/
+#elif defined(BERM_BATS_EXT)
+c
+c mixed layer depth coefficients extended to 2024 (MLDTest)
+c
+       data c_h    /  0.74897d+2,
+     $                0.42072d+2, 0.57129d+2, 0.23927d+2,-0.91370d+1,
+     $               -0.28134d+1,-0.11276d+2/
 #else
 cc
 cc Station 'S' hydrographic data coefficients

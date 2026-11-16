@@ -20,6 +20,8 @@ c     date     author  remarks
 c   
 c     15.10.99   ng    first implementation
 c     06.06.00   ng    added new spline files (combined BERM/BATS)
+c     16.11.26         added extended-data branch (to 2024),
+c                        file name length 45 -> 80 characters
 c
 c =====================================================================
 c
@@ -64,13 +66,13 @@ c
       double precision t_dc13a(ndatamax),t_pco2a(ndatamax)
       double precision t_kz(ndatamax),t_dcdz(ndatamax)        
 c
-      character*45 sdic_spline_file,dc13_spline_file
-      character*45 salk_spline_file
-      character*45 ws_spline_file,h_spline_file
-      character*45 temp_spline_file,sal_spline_file
-      character*45 fco2o_spline_file
-      character*45 dc13a_spline_file,pco2a_spline_file
-      character*45 kz_spline_file,dcdz_spline_file
+      character*80 sdic_spline_file,dc13_spline_file
+      character*80 salk_spline_file
+      character*80 ws_spline_file,h_spline_file
+      character*80 temp_spline_file,sal_spline_file
+      character*80 fco2o_spline_file
+      character*80 dc13a_spline_file,pco2a_spline_file
+      character*80 kz_spline_file,dcdz_spline_file
 
 c     print chosen spline files to terminal
 c
@@ -102,6 +104,39 @@ c     used up to August '01
       data pco2a_spline_file /'splines/pco2a_spl_stas_83-99.dat'/
       data kz_spline_file /'splines/kz_spl_stas_83-99.dat'/
       data dcdz_spline_file /'splines/dcdz_spl_stas_83-99.dat'/
+#elif defined(BERM_BATS_EXT)
+c
+c     extended data set (to 2024), Nov 2026
+c       ws, dc13a, pco2a: placeholder splines extended from the
+c       previous period (BOGUS); they keep the May 2002 harmonics.
+c     NOTE: each string must close (with '/) before column 72.
+c
+      data sdic_spline_file
+     $     /'splines/spline_data.sdicTest'/
+      data salk_spline_file
+     $     /'splines/spline_data.salkTest'/
+      data dc13_spline_file
+     $     /'splines/spline_data.dc13Test'/
+      data temp_spline_file
+     $     /'splines/spline_data.TempTest'/
+      data sal_spline_file
+     $     /'splines/spline_data.SalTest'/
+      data fco2o_spline_file
+     $     /'splines/spline_data.fco2Test'/
+      data dc13a_spline_file
+     $     /'splines/spline_atmdc13_ljo_bme_to2024BOGUS.out'/
+      data pco2a_spline_file
+     $     /'splines/spline_atmco2_ljo_bme_to2024BOGUS.out'/
+      data h_spline_file
+     $     /'splines/spline_data.MldTest'/
+      data ws_spline_file
+     $     /'splines/ws_ncep_monthly_spline_to2024BOGUS.out'/
+c
+c     not updated (dummy splines), same as May 3, 2002 set
+c
+      data dcdz_spline_file
+     $     /'splines/ddicdz_bats_1-156_res_spline.out'/
+      data kz_spline_file /'splines/kz_spl_stas_83-99.dat'/
 #else
 c
 c     new spline fits, updated May 3, 2002
@@ -250,7 +285,7 @@ c
             goto 9900
          endif
 c
-8000     format('--SPLINE: file ',a50,' does not exist.'/
+8000     format('--SPLINE: file ',a80,' does not exist.'/
      $             ' program stops.')
 c     
 c --------------------------------------------------------------------
