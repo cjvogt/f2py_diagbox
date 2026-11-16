@@ -128,7 +128,7 @@ c
       data pco2a_spline_file
      $     /'splines/spline_atmco2_ljo_bme_to2024BOGUS.out'/
       data h_spline_file
-     $     /'splines/spline_data.MldTest'/
+     $     /'splines/spline_data.MLDTest'/
       data ws_spline_file
      $     /'splines/ws_ncep_monthly_spline_to2024BOGUS.out'/
 c
