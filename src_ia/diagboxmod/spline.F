@@ -131,11 +131,11 @@ c
      $     /'splines/spline_data.MLDTest'/
       data ws_spline_file
      $     /'splines/ws_ncep_monthly_spline_to2024BOGUS.out'/
-c
-c     not updated (dummy splines), same as May 3, 2002 set
-c
       data dcdz_spline_file
-     $     /'splines/ddicdz_bats_1-156_res_spline.out'/
+     $     /'splines/spline_data.dcdzTest'/
+c
+c     not updated (dummy spline), same as May 3, 2002 set
+c
       data kz_spline_file /'splines/kz_spl_stas_83-99.dat'/
 #else
 c
