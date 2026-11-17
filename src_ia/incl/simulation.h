@@ -26,7 +26,7 @@ c
       double precision tstart,tend,ts,time
       integer nstep,nstepmax
 c
-      parameter (nstepmax = 10000)
+      parameter (nstepmax = 20000)
 
 
 

@@ -22,7 +22,7 @@ c
 c------------------------------------------------------------------------
 c
       integer nyearmax,nyears
-      parameter(nyearmax = 20)
+      parameter(nyearmax = 50)
 c
       double precision year_start
 c
